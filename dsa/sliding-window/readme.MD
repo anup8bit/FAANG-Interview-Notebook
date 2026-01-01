@@ -8,7 +8,7 @@ Before coding, ask yourself:
 
 Type	            Example
 -----------------------------------------------|
-Fixed size	        Max sum subarray of size k |
-Variable size	    Minimum Window Substring   |
-Expand only	        Longest substring          |
-Expand + shrink	    Most Google problems       |
+Fixed size	        - Max sum subarray of size k |
+Variable size	    - Minimum Window Substring   |
+Expand only	        - Longest substring          |
+Expand + shrink	    - Most Google problems       |
