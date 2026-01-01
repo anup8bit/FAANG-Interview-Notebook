@@ -4,12 +4,12 @@
 
 In hard problems, the window is usually combined with:
 
-. HashMap / Array frequency
-. Deque
-. Heap
-. Binary Search
-. Prefix sums
-. Greedy invariants
+- HashMap / Array frequency
+- Deque
+- Heap
+- Binary Search
+- Prefix sums
+- Greedy invariants
 
 # The key question is always:
 **What invariant must always hold true inside the window?**
@@ -19,13 +19,13 @@ In hard problems, the window is usually combined with:
 
 ## 2️⃣ Core HARD Sliding Window Patterns
 
-# 🧠 PATTERN 1: “Minimum Window with Constraints”
+### 🧠 PATTERN 1: "Minimum Window with Constraints"
 (Most common Google HARD pattern)
 
 Examples
-76. Minimum Window Substring
-727. Minimum Window Subsequence
-632. Smallest Range Covering Elements from K Lists
+- 76. Minimum Window Substring
+- 727. Minimum Window Subsequence
+- 632. Smallest Range Covering Elements from K Lists
 
 **Invariant** - Window must satisfy ALL required constraints
 
@@ -46,10 +46,10 @@ while (right < n) {
 ```
 
 **Key Insight**
-. Hard part = windowValid()
-. Optimize validation using:
-    . matchedCount == requiredCount
-    . **NOT scanning hashmap every time**
+- Hard part = windowValid()
+- Optimize validation using:
+    - matchedCount == requiredCount
+    - **NOT scanning hashmap every time**
 
 
 Google Interview Tip
@@ -61,15 +61,15 @@ Google Interview Tip
 # 🧠 PATTERN 2: “At Most K” → “Exactly K” Trick
 
 Examples
-992. Subarrays with K Different Integers
-1248. Count Number of Nice Subarrays
+- 992. Subarrays with K Different Integers
+- 1248. Count Number of Nice Subarrays
 
 **Trick:**
     Exactly(K) = AtMost(K) - AtMost(K-1)
 
 **Why HARD?**
-. Requires two sliding windows
-. Needs deep understanding of monotonic shrink logic
+- Requires two sliding windows
+- Needs deep understanding of monotonic shrink logic
 
 Skeleton
 ```java
@@ -89,12 +89,12 @@ int atMostK(int k) {
 ```
 
 
-# 🧠 PATTERN 3: Variable Window with “Dynamic Validity”
+### 🧠 PATTERN 3: Variable Window with "Dynamic Validity"
 
 Examples
-2958. Length of Longest Subarray With at Most K Frequency
-424. Longest Repeating Character Replacement
-1004. Max Consecutive Ones III
+- 2958. Length of Longest Subarray With at Most K Frequency
+- 424. Longest Repeating Character Replacement
+- 1004. Max Consecutive Ones III
 
 **Key Insight**
     Window validity changes dynamically as max frequency changes.
@@ -115,18 +115,18 @@ while (windowSize - maxCount > k) {
 
 
 
-# 🧠 PATTERN 4: Sliding Window + Monotonic Deque
+### 🧠 PATTERN 4: Sliding Window + Monotonic Deque
 
 **(Interviewers LOVE this)**
 
 Examples
-239. Sliding Window Maximum
-1438. Longest Continuous Subarray With Abs Diff ≤ Limit
-1696. Jump Game VI
+- 239. Sliding Window Maximum
+- 1438. Longest Continuous Subarray With Abs Diff ≤ Limit
+- 1696. Jump Game VI
 
 **Deque Invariant**
-. Monotonically increasing or decreasing
-. Front always holds best candidate
+- Monotonically increasing or decreasing
+- Front always holds best candidate
 
 Skeleton
 ```java
@@ -141,13 +141,13 @@ if (deque.peekFirst() < left) deque.pollFirst();
 💡 Hard part = deciding what the deque stores (index vs value)
 
 
-# 🧠 PATTERN 5: Sliding Window + Binary Search
+### 🧠 PATTERN 5: Sliding Window + Binary Search
 
 (Very HARD – Google L5+)
 
 Examples
-1044. Longest Duplicate Substring
-2261. K Divisible Elements Subarrays
+- 1044. Longest Duplicate Substring
+- 2261. K Divisible Elements Subarrays
 
 **Approach**
 1. Binary search on window size
@@ -168,31 +168,31 @@ while (low <= high) {
 **existsValidWindow() → rolling hash + sliding window**
 
 
-# 🧠 PATTERN 6: Sliding Window on Two Arrays / Multiple Sources
+### 🧠 PATTERN 6: Sliding Window on Two Arrays / Multiple Sources
 
 Examples
-632. Smallest Range Covering Elements from K Lists
-76. variant with multiple strings
+- 632. Smallest Range Covering Elements from K Lists
+- 76. variant with multiple strings
 
 **Trick**
-. Merge arrays
-. Track frequency per source
-. Window must include all sources
+- Merge arrays
+- Track frequency per source
+- Window must include all sources
 
 
 
 3️⃣ How Google Evaluates Sliding Window
 
 They check:
-. Can you define window invariant?
-. Do you shrink correctly?
-. Do you avoid brute-force checks?
-. Is the code clean and minimal?
+- Can you define window invariant?
+- Do you shrink correctly?
+- Do you avoid brute-force checks?
+- Is the code clean and minimal?
 
 ❌ Red flags:
-. Nested loops without invariant
-. Rechecking entire map
-. Overcomplicated logic
+- Nested loops without invariant
+- Rechecking entire map
+- Overcomplicated logic
 
 
 
