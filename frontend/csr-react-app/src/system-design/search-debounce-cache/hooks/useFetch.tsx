@@ -7,7 +7,10 @@ const useFetch = (url: string) => {
     const [error, setError] = useState<Error | null>(null);
 
     useEffect(() => {
-        if (!url) return;
+        if (!url) {
+            setData(null);
+            return;
+        }
         const controller = new AbortController();
 
         const fetchData = async () => {
@@ -29,6 +32,8 @@ const useFetch = (url: string) => {
 
                 setData(data);
             } catch (err) {
+                // if error is due to abort, do nothing
+                if ((err as DOMException).name === "AbortError") return;
                 setError(err as unknown as Error);
             } finally {
                 setLoading(false);
