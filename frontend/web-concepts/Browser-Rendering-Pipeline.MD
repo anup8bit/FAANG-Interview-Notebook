@@ -72,3 +72,32 @@ Browser Rendering Pipeline — Step-by-Step:
 ### Final thoughts:
 Reflows are expensive and should be minimized.
 Repaints are less expensive but still impact performance.
+
+
+
+#### Feedback ####
+
+Overall Rating: 6/10
+
+Strengths:
+
+Understanding of the pipeline: You covered the key steps such as DOM updates, CSSOM, and render tree creation.
+
+Areas for Improvement:
+
+Precision: Meta expects a high level of detail, especially around rendering and performance optimizations.
+
+Technical Terms: Use precise terms like reflow, repaint, composite, and GPU involvement.
+
+Blocking vs. Non-blocking: Clarify which steps block rendering and which can be optimized.
+
+
+### What Could Improve Your Score to 8+/10:
+
+1. Clear Distinction: Make a clear distinction between steps that trigger layout vs. those that only trigger paint.
+
+2. Optimization Tips: Discuss how to optimize the rendering process, such as using requestAnimationFrame for animations.
+
+3. GPU Involvement: Explain how the GPU is used in the composite phase and why it's beneficial.
+
+4. Practical Examples: Mention practical scenarios like optimizing CSS for performance.
