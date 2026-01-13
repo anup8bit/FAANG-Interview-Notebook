@@ -1,0 +1,28 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 60px auto 120px;
+    height: 100%;
+}
+
+.nav-bar {
+    background: #ca03fc;
+    grid-column: 1 / span 2;
+}
+
+.menu-bar {
+    background: gray;
+    grid-row: 2 / span 2;
+}
+
+.content-bar {
+    overflow: auto;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.footer-bar {
+    background: blueviolet;
+
+}

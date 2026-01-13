@@ -1,0 +1,25 @@
+.rating-container {
+    display: inline-flex;
+    gap: 16px;
+    padding: 16px;
+    border: solid 1px grey;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.star-rating-cta {
+    background: none;
+    border: none;
+    padding: none;
+    margin: none;
+    color: grey;
+    font-size: 32px;
+}
+
+.rated-cta {
+    color: yellow;
+}
+
+.star-rating-cta:hover {
+
+}

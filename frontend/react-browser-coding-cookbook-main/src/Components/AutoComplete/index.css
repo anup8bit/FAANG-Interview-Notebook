@@ -1,0 +1,41 @@
+.auto-complete-container {
+  margin: 16px;
+  position: relative;
+}
+
+.auto-complete-input {
+  margin: 8px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.auto-complete-input-field {
+  padding: 8px;
+  height: 24px;
+  font-size: 16px;
+  border: solid 1px #000;
+}
+
+.auto-complete-list {
+  position: absolute;
+  width: 100%;
+  list-style: none;
+  max-height: 360px;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  background: #e8e1e1;
+  padding: 0;
+  margin: 0;
+}
+
+.auto-complete-list-item {
+  padding: 8px;
+  border-bottom: solid 1px #000;
+  margin: none;
+}
+
+.active-list {
+  background: #9e9b9b;
+}
+

@@ -1,0 +1,35 @@
+.tooltip-container {
+  position: relative;
+  display: inline-block; /* ensures tooltip positions relative to element */
+}
+
+.tooltip {
+  position: absolute;
+  /* background-color: #000;
+  opacity: 0.9;
+  color: #fff;
+  padding: 8px; */
+}
+
+.tooltip-content {
+  position: relative;
+  background-color: #000;
+  opacity: 0.9;
+  color: #fff;
+  padding: 8px;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  content: "";
+  height: 0;
+  width: 0;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  justify-content: center;
+  border-left: solid 8px transparent;
+  border-right: solid 8px transparent;
+  border-bottom: solid 8px red;
+}

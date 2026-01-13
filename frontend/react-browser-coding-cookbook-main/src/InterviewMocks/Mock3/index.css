@@ -1,0 +1,20 @@
+.counter-container {
+  padding: 36px;
+  border: solid 1px #000;
+}
+
+.counter-wrapper {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+}
+
+.counter-cta {
+  background: none;
+  border: none;
+  padding: 16px;
+  margin: 0;
+}
+
+.counter-value {
+  padding: 16px;
+}

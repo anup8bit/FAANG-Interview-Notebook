@@ -1,0 +1,14 @@
+
+.pair-game {
+  display: inline-grid;
+}
+
+
+.grid-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  font-weight: bold;
+  background-color: aquamarine;
+}

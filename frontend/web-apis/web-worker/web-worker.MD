@@ -72,3 +72,134 @@ Video metadata processing
 Spreadsheet formulas
 Pivot table computation
 Large document layout calculation
+
+
+### 4️⃣ How Data Flows (Critical Design)
+❌ Anti-pattern
+UI → Worker → UI (big objects)
+
+✅ Production pattern
+UI → Worker (raw data via ArrayBuffer)
+Worker → UI (small diff or index)
+
+
+Workers return instructions, not full state.
+
+
+### 6️⃣ Example: Search in Large App (End-to-End)
+Problem
+
+User types → search 50k items → UI freezes
+
+Solution
+
+```js
+UI
+ └─ debounce input
+    └─ send query to worker
+
+Worker
+ ├─ tokenize
+ ├─ score
+ ├─ rank
+ └─ return top 20 IDs
+
+UI
+ └─ render 20 items
+```
+
+
+UI
+ └─ debounce input
+    └─ send query to worker
+
+Worker
+ ├─ tokenize
+ ├─ score
+ ├─ rank
+ └─ return top 20 IDs
+
+UI
+ └─ render 20 items
+
+📌 Worker returns IDs only, not objects.
+
+
+### 7️⃣ Cancellation Strategy (Very Important)
+
+Large apps must cancel work.
+
+Pattern
+```js
+const controller = new AbortController();
+
+worker.postMessage({ job, signal: controller.signal });
+```
+
+Worker:
+```js
+if (signal.aborted) return;
+```
+
+User scrolls → cancel
+Tab hidden → cancel
+New request replaces old
+❌ worker.terminate() is last resort
+
+
+8️⃣ Scheduling Strategy
+| Task Type    | Solution              |
+| ------------ | --------------------- |
+| UI-sensitive | `requestIdleCallback` |
+| CPU-heavy    | Web Worker            |
+| Network      | Service Worker        |
+| Long-running | Chunked worker jobs   |
+
+
+9️⃣ Memory & Performance Rules (Lead-Level)
+Golden rules
+
+Use Transferables
+
+Avoid large structured cloning
+
+Reuse buffers
+
+Batch messages
+
+Avoid chatty protocols
+
+Red flags
+
+🚫 Passing full Redux store
+🚫 Posting large arrays repeatedly
+🚫 Creating workers per event
+
+🔟 Observability & Debugging
+
+Large orgs track:
+
+Worker task latency
+
+Queue depth
+
+Cancellation rate
+
+Message size
+
+GC pauses
+
+Tools:
+
+Chrome DevTools → Workers
+
+Performance timeline
+
+Custom telemetry
+
+### 1️⃣1️⃣ When NOT to Use Web Workers
+
+❌ DOM-related work
+❌ Short tasks (<5ms)
+❌ Chatty synchronous logic
+❌ Layout-measure logic

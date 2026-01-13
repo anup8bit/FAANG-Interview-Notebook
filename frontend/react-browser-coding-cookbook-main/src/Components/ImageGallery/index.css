@@ -1,0 +1,14 @@
+.image-gallery-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media screen and (min-width: 1024px) {
+ /* breakpoints */
+ .image-gallery-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto auto auto auto;
+ }
+}
