@@ -7,7 +7,7 @@ PostgreSQL setup & basic configuration on Mac (end-to-end):
 6. Set password: psql postgres -c "ALTER USER anup WITH PASSWORD 'StrongPwd';".
 7. Config files: open postgresql.conf (port, listen): /opt/homebrew/var/postgresql@16/postgresql.conf; open pg_hba.conf (auth): set host all all 127.0.0.1/32 md5.
 8. Restart: brew services restart postgresql@16.
-9. Connect: psql -h localhost -U anup -d app_db.
+9. Connect: psql -h localhost -U anup -d ecommerce_db.
 10. Spring Boot hint: spring.datasource.url=jdbc:postgresql://localhost:5432/app_db, username=anup, password=StrongPwd.
 
 ### psql postgres -c "ALTER USER anup WITH PASSWORD 'anup027gupta';"

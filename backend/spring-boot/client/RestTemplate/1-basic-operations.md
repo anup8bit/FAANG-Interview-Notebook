@@ -103,7 +103,9 @@ public class UserService {
     
     // Approach 3: Using UriComponentsBuilder (Recommended)
     public List<User> searchUsersBuilder(String name, int age) {
-        String url = UriComponentsBuilder.fromHttpUrl("https://api.example.com/users")
+        String BASE_URL = "https://api.example.com";
+        String url = UriComponentsBuilder.fromHttpUrl(BASE_URL)
+            .path("/posts")
             .queryParam("name", name)
             .queryParam("age", age)
             .toUriString();
