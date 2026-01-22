@@ -8,7 +8,9 @@ This guide provides enterprise-level knowledge on `@Configuration` and `@Configu
 
 ### **What is @Configuration?**
 
-`@Configuration` is a Spring annotation that marks a class as a source of bean definitions. It's a replacement for XML-based Spring configuration and allows you to define beans programmatically using Java code.
+`@Configuration` is a Spring annotation that marks a class as a ***source of bean definitions***.
+
+It's a replacement for XML-based Spring configuration and allows you to define beans programmatically using Java code.
 
 ### **Key Characteristics**
 
