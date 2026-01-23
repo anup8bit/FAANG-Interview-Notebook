@@ -1,0 +1,26 @@
+.otp-form-card {
+    background: #fff;
+    border: solid 1px gray;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+}
+
+.otp-input-wrapper {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    gap: 4px;
+    margin: 8px 0px;
+}
+
+.otp-input {
+    border: solid 1px grey;
+    border-radius: 4px;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    caret-color: transparent;
+}

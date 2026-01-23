@@ -1,0 +1,52 @@
+.file-explorer-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.file-explorer-list {
+  list-style: none;
+  list-style-type: none;
+}
+
+.folder-container {
+  margin: 2px;
+}
+
+.folder-cta {
+  background-color: inherit;
+  border: none;
+  
+}
+
+.file-list-item {
+  cursor: pointer;
+}
+
+.file-cta {
+  background-color: inherit;
+  border: none;
+}
+
+.list-close::before{
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-right: 5px;
+  border-top: 5px solid  transparent;
+  border-bottom: 5px solid  transparent;
+  border-left: 5px solid #000;
+}
+
+.list-open::before{
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-right: 5px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #000;
+}

@@ -1,0 +1,40 @@
+.accordian {
+  display: flex;
+  flex-direction: column;
+  margin: 16px 0px;
+}
+.accordian-header-wrapper {
+  width: 100%;
+}
+
+.accordian-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: blueviolet;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+
+}
+
+.accordian-content {
+  /* transition: height 2s ease; */
+}
+
+.arrow-down {
+  border: solid #000;
+  padding: 4px;
+  border-width: 0px 4px 4px 0px;
+  display: inline-block;
+  transform: rotate(45deg);
+}
+
+.arrow-up {
+    border: solid #000;
+  padding: 4px;
+  border-width: 0px 4px 4px 0px;
+  display: inline-block;
+  transform: rotate(-135deg);
+}

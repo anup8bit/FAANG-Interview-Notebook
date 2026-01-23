@@ -1,0 +1,21 @@
+
+
+
+
+.prev-cta {
+    background: #fff;
+    color: #71109e;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 16px 32px;
+}
+
+.next-cta {
+    background: #71109e;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 16px 32px;
+}
